@@ -78,8 +78,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://gitlab.gnome.org/GNOME/libdex/-/archive/0.11.1/libdex-0.11.1.tar.gz
-            sha256: a1702bc063b7004515d32e24692790d64383902542b2ee6e3b4a7a43770432e7
+            url: https://gitlab.gnome.org/GNOME/libdex/-/archive/1.0.0/libdex-1.0.0.tar.gz
+            sha256: b36185e2a51f7b605b67dbea889ee5a487009b10c4ffe4ee57f740e3b746e39c
             x-checker-data:
               type: anitya
               project-id: 328356
@@ -214,8 +214,8 @@ modules:
                 sources:
                   - type: git
                     url: https://github.com/ostreedev/ostree
-                    tag: v2025.4
-                    commit: 1a9350c94395cf743fc43e715931998fd67c520b
+                    tag: v2025.5
+                    commit: f4d4659a905a678e97afd1b1530227a5c3652389
                     x-checker-data:
                       type: anitya
                       project-id: 10899
