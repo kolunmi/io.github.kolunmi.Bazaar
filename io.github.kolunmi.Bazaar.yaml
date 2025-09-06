@@ -42,8 +42,8 @@ modules:
       - -Dsandboxed_libflatpak=true
     sources:
       - type: archive
-        url: https://github.com/kolunmi/bazaar/archive/refs/tags/v0.4.5.tar.gz
-        sha256: bcf98d6670dc011ebfd61419c52548a4ea3f6466584c26b2e7f08478c296028d
+        url: https://github.com/kolunmi/bazaar/archive/refs/tags/v0.4.6.tar.gz
+        sha256: b46505251156d96df4943484223c3e8bf7518aecfba449b457a4ff720a8c7671
         x-checker-data:
           type: anitya
           project-id: 379145
@@ -215,8 +215,8 @@ modules:
                 sources:
                   - type: git
                     url: https://github.com/ostreedev/ostree
-                    tag: v2025.5
-                    commit: f4d4659a905a678e97afd1b1530227a5c3652389
+                    tag: v2025.6
+                    commit: 82185d9aaf0a79b100378f13a54c3d5d3763a971
                     x-checker-data:
                       type: anitya
                       project-id: 10899
