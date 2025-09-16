@@ -40,6 +40,9 @@ modules:
     buildsystem: meson
     config-opts:
       - -Dsandboxed_libflatpak=true
+      # Set this to `etc` so that distributors can override `host-etc` perms
+      - -Dhardcoded_content_config_path=/run/host/etc/bazaar/config.yaml
+      - -Dhardcoded_blocklist_path=/run/host/etc/bazaar/blocklist.txt
     sources:
       - type: archive
         url: https://github.com/kolunmi/bazaar/archive/refs/tags/v0.4.10.tar.gz
