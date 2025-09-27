@@ -1,6 +1,6 @@
 id: io.github.kolunmi.Bazaar
 runtime: org.gnome.Platform
-runtime-version: "48"
+runtime-version: "49"
 sdk: org.gnome.Sdk
 command: bazaar-launcher
 sdk-extensions:
@@ -45,8 +45,8 @@ modules:
       - -Dhardcoded_blocklist_path=/run/host/etc/bazaar/blocklist.txt
     sources:
       - type: archive
-        url: https://github.com/kolunmi/bazaar/archive/refs/tags/v0.4.11.tar.gz
-        sha256: 742fc17371b5377d010c930379a337f6e030ad83b6a5add6a37805e0b49783ba
+        url: https://github.com/kolunmi/bazaar/archive/refs/tags/v0.5.0.tar.gz
+        sha256: b77fda92bf3c920d4da74ae9c317969ad1464f717cc977ac31ac81d40b96d2a0
         x-checker-data:
           type: anitya
           project-id: 379145
@@ -87,24 +87,6 @@ modules:
               type: anitya
               project-id: 328356
               url-template: https://gitlab.gnome.org/GNOME/libdex/-/archive/$version/libdex-$version.tar.gz
-      - name: glycin
-        buildsystem: meson
-        config-opts:
-          - -Dglycin-loaders=true
-          - -Dlibglycin=true
-        sources:
-          - type: archive
-            url: https://gitlab.gnome.org/GNOME/glycin/-/archive/1.2.3/glycin-1.2.3.tar.gz
-            sha256: ce413c2e011931eca25636feaccc0a0eac02a0c89485b78d7db34e5cbeb28615
-            x-checker-data:
-              type: anitya
-              project-id: 369437
-              url-template: https://gitlab.gnome.org/GNOME/glycin/-/archive/$version/glycin-$version.tar.gz
-          # Check `update-deps.sh` to vendor dependencies for this
-          - glycin-cargo-sources.json
-          - type: shell
-            commands:
-              - install -Dpm0644 cargo/config .cargo/config.toml
       - name: flatpak
         buildsystem: meson
         config-opts:
