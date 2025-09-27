@@ -45,8 +45,8 @@ modules:
       - -Dhardcoded_blocklist_path=/run/host/etc/bazaar/blocklist.txt
     sources:
       - type: archive
-        url: https://github.com/kolunmi/bazaar/archive/refs/tags/v0.5.0.tar.gz
-        sha256: b77fda92bf3c920d4da74ae9c317969ad1464f717cc977ac31ac81d40b96d2a0
+        url: https://github.com/kolunmi/bazaar/archive/refs/tags/v0.5.1.tar.gz
+        sha256: 01fe0aa8ac18836855eaf8f59129d2bad799944be54ceb471264170b2e9490a1
         x-checker-data:
           type: anitya
           project-id: 379145
