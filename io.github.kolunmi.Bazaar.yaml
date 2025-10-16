@@ -2,7 +2,7 @@ id: io.github.kolunmi.Bazaar
 runtime: org.gnome.Platform
 runtime-version: "49"
 sdk: org.gnome.Sdk
-command: bazaar-launcher
+command: bazaar
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
   - org.freedesktop.Sdk.Extension.llvm20
@@ -51,13 +51,6 @@ modules:
           type: anitya
           project-id: 379145
           url-template: https://github.com/kolunmi/bazaar/archive/refs/tags/v$version.tar.gz
-      - type: script
-        dest-filename: bazaar-launcher
-        commands:
-          - bazaar window --auto-service "$@"
-      - type: shell
-        commands:
-          - install -Dpm0755 -t /app/bin ./bazaar-launcher
       # Check `update-deps.sh` to vendor dependencies for this
       - bazaar-cargo-sources.json
       - type: shell
