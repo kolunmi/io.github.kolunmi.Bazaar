@@ -64,6 +64,20 @@ modules:
               type: anitya
               project-id: 279929
               tag-template: $version
+
+      - name: md4c
+        buildsystem: cmake
+        config-opts:
+        - "-DBUILD_MD2HTML_EXECUTABLE=Off"
+        sources:
+          - type: git
+            url: https://github.com/mity/md4c.git
+            commit: 729e6b8b320caa96328968ab27d7db2235e4fb47
+            tag: release-0.5.2
+            x-checker-data:
+              type: git
+              tag-pattern: '^release-([\d.]+)$'
+
       - name: flatpak
         buildsystem: meson
         config-opts:
@@ -124,6 +138,7 @@ modules:
                 x-checker-data:
                   type: pypi
                   name: flit_core
+
           - name: polkit
             config-opts:
               - --disable-polkitd
@@ -159,6 +174,7 @@ modules:
                   - |
                     gtkdocize --flavour no-tmpl
                     autoreconf -if
+
             modules:
               - shared-modules/intltool/intltool-0.51.json
               - name: ostree
@@ -184,6 +200,7 @@ modules:
                       type: anitya
                       project-id: 10899
                       tag-template: v$version
+
                 modules:
                   - name: libfuse
                     build-options:
@@ -222,12 +239,7 @@ modules:
                     x-checker-data:
                       type: git
                       url-template: $version
-      - name: md4c
-        buildsystem: cmake
-        sources:
-          - type: git
-            url: https://github.com/mity/md4c.git
-            tag: release-0.5.2
+
   - name: bubblewrap
     buildsystem: meson
     config-opts:
