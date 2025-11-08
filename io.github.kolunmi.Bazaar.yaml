@@ -3,9 +3,6 @@ runtime: org.gnome.Platform
 runtime-version: "49"
 sdk: org.gnome.Sdk
 command: bazaar
-sdk-extensions:
-  - org.freedesktop.Sdk.Extension.rust-stable
-  - org.freedesktop.Sdk.Extension.llvm20
 finish-args:
   - --share=network
   - --share=ipc
@@ -53,11 +50,6 @@ modules:
           url-template: $version
           is-main-source: true
 
-      # Check `update-deps.sh` to vendor dependencies for this
-      - bazaar-cargo-sources.json
-      - type: shell
-        commands:
-          - install -Dpm0644 cargo/config .cargo/config.toml
     modules:
       - name: blueprint-compiler
         buildsystem: meson
