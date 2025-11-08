@@ -43,8 +43,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/kolunmi/bazaar
-        commit: 7af7591c1529889744a538ab039298dab1c56b96
-        tag: v0.5.8
+        commit: d7789f6e6119ce6f097704cac8f832ccec59203e
+        tag: v0.5.9
         x-checker-data:
           type: git
           url-template: $version
@@ -222,7 +222,12 @@ modules:
                     x-checker-data:
                       type: git
                       url-template: $version
-
+      - name: md4c
+        buildsystem: cmake
+        sources:
+          - type: git
+            url: https://github.com/mity/md4c.git
+            tag: release-0.5.2
   - name: bubblewrap
     buildsystem: meson
     config-opts:
