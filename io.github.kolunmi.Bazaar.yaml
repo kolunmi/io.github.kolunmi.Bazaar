@@ -23,6 +23,7 @@ finish-args:
 cleanup:
   - /include
   - /lib/pkgconfig
+  - /lib/cmake
   - /share/applications/mimeinfo.cache
   - /share/bash-completion
   - /share/icons/hicolor/icon-theme.cache
@@ -30,8 +31,7 @@ cleanup:
   - /share/pkgconfig
   - "*.la"
   - "*.a"
-build-options:
-  append-path: /usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm20/bin
+
 modules:
   - name: bazaar
     buildsystem: meson
@@ -106,6 +106,9 @@ modules:
           - /share/flatpak/triggers
           - /share/gdm
           - /share/zsh
+          - /share/fish
+          - /lib/sysusers.d
+          - /lib/tmpfiles.d
         post-install:
           - install -Dpm0755 -t /app/bin /usr/bin/update-{mime,desktop}-database
         sources:
