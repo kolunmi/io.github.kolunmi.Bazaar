@@ -43,8 +43,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/kolunmi/bazaar
-        commit: d7789f6e6119ce6f097704cac8f832ccec59203e
-        tag: v0.5.9
+        commit: 43f583f35f62ce844bb7527dd7506412aafcb81c
+        tag: v0.5.10
         x-checker-data:
           type: git
           url-template: $version
@@ -64,6 +64,20 @@ modules:
               type: anitya
               project-id: 279929
               tag-template: $version
+
+      - name: md4c
+        buildsystem: cmake
+        config-opts:
+        - "-DBUILD_MD2HTML_EXECUTABLE=Off"
+        sources:
+          - type: git
+            url: https://github.com/mity/md4c.git
+            commit: 729e6b8b320caa96328968ab27d7db2235e4fb47
+            tag: release-0.5.2
+            x-checker-data:
+              type: git
+              tag-pattern: '^release-([\d.]+)$'
+
       - name: flatpak
         buildsystem: meson
         config-opts:
@@ -228,12 +242,7 @@ modules:
                     x-checker-data:
                       type: git
                       url-template: $version
-      - name: md4c
-        buildsystem: cmake
-        sources:
-          - type: git
-            url: https://github.com/mity/md4c.git
-            tag: release-0.5.2
+
   - name: bubblewrap
     buildsystem: meson
     config-opts:
