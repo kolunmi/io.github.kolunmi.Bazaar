@@ -38,13 +38,14 @@ modules:
     config-opts:
       - -Dsandboxed_libflatpak=true
       # Set this to `etc` so that distributors can override `host-etc` perms
+      - -Dhardcoded_main_config_path=/run/host/etc/bazaar/bazaar.yaml
       - -Dhardcoded_content_config_path=/run/host/etc/bazaar/config.yaml
       - -Dhardcoded_blocklist_path=/run/host/etc/bazaar/blocklist.txt
     sources:
       - type: git
         url: https://github.com/kolunmi/bazaar
-        commit: 43f583f35f62ce844bb7527dd7506412aafcb81c
-        tag: v0.5.10
+        commit: 9a4cf5b4c38b57e861f2ea3e444b99367103832c
+        tag: v0.6.0
         x-checker-data:
           type: git
           url-template: $version
