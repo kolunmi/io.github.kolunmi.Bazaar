@@ -106,6 +106,7 @@ modules:
             x-checker-data:
               type: git
               url-template: $version
+              is-important: true
 
         modules:
           - name: python3-pyparsing
@@ -190,6 +191,7 @@ modules:
                       type: anitya
                       project-id: 10899
                       tag-template: v$version
+                      is-important: true
 
                 modules:
                   - name: libfuse
