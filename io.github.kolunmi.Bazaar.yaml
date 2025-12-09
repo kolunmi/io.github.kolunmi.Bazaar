@@ -161,7 +161,6 @@ modules:
                   tag-pattern: ^([\d.]+)$
 
             modules:
-              - shared-modules/intltool/intltool-0.51.json
               - name: ostree
                 build-options:
                   env:
