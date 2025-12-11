@@ -17,6 +17,8 @@ finish-args:
   - --system-talk-name=org.freedesktop.Flatpak.SystemHelper
   # Necessary so that appstream/libflatpak can read remote content, seems to entirely fail without this access
   - --filesystem=/var/tmp
+  # We need to be able to clean up application data
+  - --filesystem=~/.var/app
   # Not having this makes it so libflatpak misbehaves and can't detect all flatpaks installed by users properly
   # "(x) flatpaks need to be updated" when they in fact don't
   - --system-talk-name=org.freedesktop.Accounts
