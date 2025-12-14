@@ -39,6 +39,7 @@ modules:
   - name: bazaar
     buildsystem: meson
     config-opts:
+      - -Ddevelopment=true
       - -Dsandboxed_libflatpak=true
       # Set this to `etc` so that distributors can override `host-etc` perms
       - -Dhardcoded_main_config_path=/run/host/etc/bazaar/bazaar.yaml
