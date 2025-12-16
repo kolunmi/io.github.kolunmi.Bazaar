@@ -80,7 +80,6 @@ modules:
           - -Dmalcontent=disabled
           - -Dsandboxed_triggers=false
           - -Dsystem_helper=enabled
-          - -Dhttp_backend=curl
           - -Dsystemd=disabled
           - -Dsystem_install_dir=/var/lib/flatpak
           - -Dsystem_bubblewrap=bwrap
