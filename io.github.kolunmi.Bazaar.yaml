@@ -47,8 +47,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/kolunmi/bazaar
-        commit: 8fa8219299e7c2eb7660d1243c5ea56e0903205c
-        tag: v0.7.2
+        commit: 42c73d9e343eae63c7cfcebaa504a9245ea32257
+        tag: v0.7.3
         x-checker-data:
           type: git
           url-template: $version
