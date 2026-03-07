@@ -107,7 +107,7 @@ modules:
           - -Dman=disabled
           - -Dseccomp=disabled
           - -Dselinux_module=disabled
-          - -Dmalcontent=disabled
+          - -Dmalcontent=enabled
           - -Dsandboxed_triggers=false
           - -Dsystem_helper=enabled
           - -Dhttp_backend=curl
