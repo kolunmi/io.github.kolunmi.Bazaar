@@ -38,6 +38,19 @@ cleanup:
   - '*.a'
 
 modules:
+  - name: blueprint-compiler
+    buildsystem: meson
+    cleanup:
+      - "*"
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/blueprint-compiler.git
+        commit: aa5298cc1677cf855bd61f9671607362bd203f4f
+        tag: v0.20.0
+        x-checker-data:
+          type: git
+          url-template: $version
+
   - name: bazaar
     buildsystem: meson
     config-opts:
@@ -49,8 +62,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/kolunmi/bazaar
-        commit: 97d488552ae4d5e81ad1cdf9a7df5edb67b56fed
-        tag: v0.7.10
+        commit: bda9476358f8e87aa80d7f4b9b7b8a84e2268389
+        tag: v0.7.11
         x-checker-data:
           type: git
           url-template: $version
@@ -70,6 +83,22 @@ modules:
               type: git
               tag-pattern: ^release-([\d.]+)$
 
+      - name: malcontent
+        buildsystem: meson
+        config-opts:
+          - -Dui=disabled
+          - -Dinstalled_tests=false
+        sources:
+          - type: git
+            url: https://gitlab.freedesktop.org/pwithnall/malcontent.git
+            commit: 3ba80995bb25b7aeda7e21d547f9e39ff9a81736
+            tag: 0.12.0
+          - type: shell
+            commands:
+              - "sed -i \"/subdir('tests')/d\" libmalcontent/meson.build"
+              - "sed -i \"/subdir('tests')/d\" meson.build"
+              - "sed -i \"/subdir('pam')/d\" meson.build"
+
       - name: flatpak
         buildsystem: meson
         config-opts:
@@ -79,7 +108,7 @@ modules:
           - -Dman=disabled
           - -Dseccomp=disabled
           - -Dselinux_module=disabled
-          - -Dmalcontent=disabled
+          - -Dmalcontent=enabled
           - -Dsandboxed_triggers=false
           - -Dsystem_helper=enabled
           - -Dsystemd=disabled
