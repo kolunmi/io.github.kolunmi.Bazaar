@@ -1,6 +1,6 @@
 id: io.github.kolunmi.Bazaar
 runtime: org.gnome.Platform
-runtime-version: '49'
+runtime-version: '50'
 sdk: org.gnome.Sdk
 command: bazaar
 finish-args:
@@ -61,9 +61,9 @@ modules:
       - -Dhardcoded_blocklist_path=/run/host/etc/bazaar/blocklist.txt
     sources:
       - type: git
-        url: https://github.com/kolunmi/bazaar
-        commit: ce5f9c45571b9973f9223f75d207ee9674ca7a7c
-        tag: v0.7.12
+        url: https://github.com/bazaar-org/bazaar
+        commit: e832f853a1ac7cad5e4ac2f2ca2b51c7915a38be
+        tag: v0.7.13
         x-checker-data:
           type: git
           url-template: $version
@@ -162,7 +162,19 @@ modules:
                 x-checker-data:
                   type: pypi
                   name: flit_core
-
+          - name: python3-babel
+            buildsystem: simple
+            cleanup:
+              - '*'
+            build-commands:
+              - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} babel
+            sources:
+              - type: file
+                url: https://files.pythonhosted.org/packages/77/f5/21d2de20e8b8b0408f0681956ca2c69f1320a3848ac50e6e7f39c6159675/babel-2.18.0-py3-none-any.whl
+                sha256: e2b422b277c2b9a9630c1d7903c2a00d0830c409c59ac8cae9081c92f1aeba35
+                x-checker-data:
+                  type: pypi
+                  name: babel
           # needed by flatpak system_helper
           - name: polkit
             buildsystem: meson
