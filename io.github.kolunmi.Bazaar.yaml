@@ -1,6 +1,6 @@
 id: io.github.kolunmi.Bazaar
 runtime: org.gnome.Platform
-runtime-version: '49'
+runtime-version: '50'
 sdk: org.gnome.Sdk
 command: bazaar
 finish-args:
@@ -61,9 +61,9 @@ modules:
       - -Dhardcoded_blocklist_path=/run/host/etc/bazaar/blocklist.txt
     sources:
       - type: git
-        url: https://github.com/kolunmi/bazaar
-        commit: ce5f9c45571b9973f9223f75d207ee9674ca7a7c
-        tag: v0.7.12
+        url: https://github.com/bazaar-org/bazaar
+        commit: e832f853a1ac7cad5e4ac2f2ca2b51c7915a38be
+        tag: v0.7.13
         x-checker-data:
           type: git
           url-template: $version
