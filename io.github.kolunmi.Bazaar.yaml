@@ -62,7 +62,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/bazaar-org/bazaar
-        commit: bf67f1dd02c7abd106cbbf3f7ce2f9709df6c768
+        commit: 78b9f2e7ab51b779818695767112937bb215d1bc
 
     modules:
       - name: md4c
