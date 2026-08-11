@@ -133,7 +133,7 @@ modules:
             tag: 1.17.6
             x-checker-data:
               type: git
-              url-template: $version
+              tag-pattern: ^(1\.[0-8][02468]\..*)$
               is-important: true
 
         modules:
