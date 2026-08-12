@@ -38,19 +38,6 @@ cleanup:
   - '*.a'
 
 modules:
-  - name: blueprint-compiler
-    buildsystem: meson
-    cleanup:
-      - '*'
-    sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/blueprint-compiler.git
-        commit: 31b62c24a72c1670d2d93dcdf2d130f1ae12778e
-        tag: v0.20.4
-        x-checker-data:
-          type: git
-          url-template: $version
-
   - name: bazaar
     buildsystem: meson
     config-opts:
@@ -61,8 +48,8 @@ modules:
       - -Dhardcoded_blocklist_path=/run/host/etc/bazaar/blocklist.txt
     sources:
       - type: git
-        url: https://github.com/bazaar-org/bazaar
-        commit: 917017d75a5dfa7e304fb94855b577d85e19f1bc
+        url: https://github.com/bazaar-org/bazaar.git
+        commit: 23d97c23195cd3bf51583cd49fd67aa8a660f1bc
 
     modules:
       - name: md4c
