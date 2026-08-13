@@ -144,6 +144,9 @@ modules:
                 x-checker-data:
                   type: pypi
                   name: flit_core
+                  # https://github.com/bazaar-org/bazaar/commit/a8e5f9386ae322b5079cdb02076542e0e1f05b5b
+                  versions:
+                    <: '4'
           - name: python3-babel
             buildsystem: simple
             cleanup:
