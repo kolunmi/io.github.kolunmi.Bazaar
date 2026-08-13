@@ -2,7 +2,7 @@ id: io.github.kolunmi.Bazaar
 runtime: org.gnome.Platform
 runtime-version: '50'
 sdk: org.gnome.Sdk
-command: bazaar
+command: bazaar-daemon
 finish-args:
   - --share=network
   - --share=ipc
