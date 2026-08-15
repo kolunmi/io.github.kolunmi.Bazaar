@@ -49,9 +49,24 @@ modules:
     sources:
       - type: git
         url: https://github.com/bazaar-org/bazaar.git
-        commit: 23d97c23195cd3bf51583cd49fd67aa8a660f1bc
+        commit: 48f93f417fb9ed46f1e234205aa45cd98869da6b
 
     modules:
+      - name: libdex
+        buildsystem: meson
+        config-opts:
+          - --buildtype=debugoptimized
+          - -Ddocs=false
+          - -Dintrospection=enabled
+          - -Dexamples=false
+          - -Dtests=false
+          - -Dsysprof=false
+        sources:
+          - type: git
+            url: https://gitlab.gnome.org/GNOME/libdex.git
+            commit: 26d094f2d7a4561862cce3efa00bb5aa1e4b0720
+            tag: 1.2.beta
+
       - name: md4c
         buildsystem: cmake
         config-opts:
