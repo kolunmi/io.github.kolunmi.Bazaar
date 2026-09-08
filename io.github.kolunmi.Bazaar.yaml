@@ -48,8 +48,8 @@ modules:
       - -Dhardcoded_blocklist_path=/run/host/etc/bazaar/blocklist.txt
     sources:
       - type: git
-        url: https://github.com/bazaar-org/bazaar.git
-        commit: 48f93f417fb9ed46f1e234205aa45cd98869da6b
+        url: https://gitlab.gnome.org/World/bazaar.git
+        commit: dcdc113d5ca7164f3595f0db91452154a5c16d1d
 
     modules:
       - name: libdex
